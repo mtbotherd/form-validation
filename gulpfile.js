@@ -36,9 +36,7 @@ gulp.task('javascript', function() {
 
 // Copy vendor css to src
 gulp.task('vendorCss', function() {
-    return gulp.src([
-            'src/css/**/*.css'
-        ])
+    return gulp.src('src/css/**/*.css')
         .pipe(gulp.dest('dist/css'))
 });
 
