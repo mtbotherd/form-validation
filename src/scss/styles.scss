@@ -1,6 +1,7 @@
 /************************************************
     Dependancies
 ************************************************/
-@import "./bootstrap-variables-custom.scss";
+@import "bootstrap-variables-custom.scss";
 @import "../../node_modules/bootstrap/scss/bootstrap";
-@import "./mixins.scss";
+@import "mixins.scss";
+@import "custom.scss";
