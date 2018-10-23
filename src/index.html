@@ -14,7 +14,7 @@
 
 <body>
     <div class="container">
-        <h1>Bootstrap 4 Form Validation</h1>
+        <h1>Form Validation with Bootstrap 4</h1>
         <form class="needs-validation" novalidate>
             <h2>Input types</h2>
             <div class="form-row">
@@ -82,7 +82,7 @@
                     <div class="valid-feedback">Looks good! <i class="far fa-thumbs-up"></i></div>
                 </div>
                 <div class="col-md-4">
-                    <label for="exampleFormControlTextarea1">Example textarea</label>
+                    <label for="exampleFormControlTextarea1">Textarea</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
                     <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
                     <div class="valid-feedback">Looks good! <i class="far fa-thumbs-up"></i></div>
@@ -99,6 +99,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 mb-3">
+                    <div>Checkbox group</div>
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" name="customCheckbox" class="custom-control-input" id="checkboxInput1" required>
                         <label class="custom-control-label" for="checkboxInput1">Checkbox 1</label>
@@ -115,6 +116,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
+                    <div>Radio button group</div>
                     <div class="custom-control custom-radio">
                         <input type="radio" id="radio1" name="customRadio" class="custom-control-input" required>
                         <label class="custom-control-label" for="radio1">Radio 1</label>
@@ -132,8 +134,16 @@
                 </div>
             </div>
             <hr />
-            <button class="btn btn-primary" type="submit">Submit</button>
-            <button class="btn btn-default" type="reset">Reset</button>
+            <div class="form-row">
+                <div class="col-md-4 offset-md-2 mb-3">
+                    <button class="btn btn-primary" type="submit">Submit button</button>
+                    <button class="btn btn-default" type="reset">Reset button</button>
+                </div>
+                <div class="col-md-6">
+                    <input type="submit" class="btn btn-primary" value="Submit input" />
+                    <input type="reset" class="btn btn-default" value="Reset input" />
+                </div>
+            </div>
         </form>
     </div>
 
