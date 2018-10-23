@@ -29,8 +29,7 @@ gulp.task('javascript', function() {
     return gulp.src([
             'node_modules/jquery/dist/jquery.min.js',
             'node_modules/popper.js/dist/umd/popper.min.js',
-            'node_modules/bootstrap/dist/js/bootstrap.min.js',
-            'node_modules/clipboard/dist/clipboard.min.js'
+            'node_modules/bootstrap/dist/js/bootstrap.min.js'
         ])
         .pipe(gulp.dest('src/js'))
 });
@@ -69,14 +68,10 @@ gulp.task('watch', function() {
 
 // Optimize CSS and JS
 gulp.task('useref', function() {
-    return gulp.src([
-            'src/*.html',
-            '!src/_boilerplate-desktop.html',
-            '!src/_boilerplate-mobile.html'
-        ]) // Grabs CSS and JS from HTML document
+    return gulp.src('src/*.html') // Grabs CSS and JS from HTML document
         .pipe(useref())
-        .pipe(gulpIf('*.js', uglify())) // Minifies only if it's a js file
-        .pipe(gulpIf('*.css', cssnano())) // Minifies only if it's a css file
+        //.pipe(gulpIf('*.js', uglify())) // Minifies only if it's a js file
+        //.pipe(gulpIf('*.css', cssnano())) // Minifies only if it's a css file
         .pipe(gulp.dest('dist'))
 });
 
