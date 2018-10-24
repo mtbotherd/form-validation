@@ -14,13 +14,14 @@
 
 <body>
     <div class="container">
-        <h1>Bootstrap 4 Form with Validation</h1>
-        <form class="needs-validation" novalidate>
-            <h2>Input types</h2>
+        <h1>Form Validation</h1>
+        <form class="needs-validation" novalidate="novalidate">
+            <h2>Using Bootstrap 4</h2>
+            <p>This is a sample of the form types used on metrotransit.org. Client side validation is handled using Bootstrap 4</p>
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                     <label for="textInput">Text</label>
-                    <input type="text" class="form-control" id="textInput" placeholder="All characters" required>
+                    <input type="text" class="form-control" id="textInput" placeholder="Can use any characters" required>
                     <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Oops! Please enter 1 or more characters.</div>
                     <div class="valid-feedback">Looks good! <i class="far fa-thumbs-up"></i></div>
                 </div>
@@ -32,7 +33,7 @@
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="emailInput">Email</label>
-                    <input type="email" class="form-control" id="emailInput" placeholder="email-address@domain.com" required>
+                    <input type="email" class="form-control" id="emailInput" placeholder="Valid email address" required>
                     <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter a valid email address.</div>
                     <div class="valid-feedback">Looks good! <i class="far fa-thumbs-up"></i></div>
                 </div>
@@ -40,7 +41,7 @@
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                     <label for="passwordInput">Password</label>
-                    <input type="password" class="form-control" id="passwordInput" placeholder="Enter a password" required>
+                    <input type="password" class="form-control" id="passwordInput" required>
                     <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter an password.</div>
                     <div class="valid-feedback">Looks good! <i class="far fa-thumbs-up"></i></div>
                 </div>
@@ -52,7 +53,7 @@
                 </div>
                 <div class="col-md-4">
                     <label for="urlInput">URL</label>
-                    <input type="url" class="form-control" id="urlInput" placeholder="http://domain.com" required>
+                    <input type="url" class="form-control" id="urlInput" value="http://" required>
                     <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter a valid url.</div>
                     <div class="valid-feedback">Looks good! <i class="far fa-thumbs-up"></i></div>
                 </div>
@@ -135,14 +136,14 @@
             </div>
             <hr />
             <div class="form-row">
-                <div class="col-md-4 offset-md-2 mb-3">
+                <div class="col-md-4 offset-md-4 mb-3 text-center">
                     <button class="btn btn-primary" type="submit">Submit button</button>
                     <button class="btn btn-light" type="reset">Reset button</button>
                 </div>
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                     <input type="submit" class="btn btn-primary" value="Submit input" />
                     <input type="reset" class="btn btn-light" value="Reset input" />
-                </div>
+                </div> -->
             </div>
         </form>
     </div>
