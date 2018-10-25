@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
+    <title>Form Validation Example</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Form Validation Example</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <!-- build:css css/styles.css -->
@@ -15,12 +16,11 @@
 <body>
     <div class="container">
         <h1>Form Validation</h1>
-        <form class="needs-validation" novalidate="novalidate">
-            <h2>Using Bootstrap 4</h2>
-            <p>This is a sample of the form types used on metrotransit.org. Client side validation is handled using Bootstrap 4</p>
-            <div class="form-row">
+        <p class="lead">This is a Bootstrap 4 form with examples of the form types used on metrotransit.org. Client side validation is handled using Bootstrap 4.</p>
+        <form id="sampleForm" class="needs-validation" method="post" action="" novalidate="nonvalidate">
+            <div class="row">
                 <div class="col-md-4 mb-3">
-                    <div class="form-group input-number">
+                    <div class="form-group">
                         <label for="textInput">Text</label>
                         <input type="text" class="form-control" id="textInput" placeholder="Can use any characters" required>
                         <div class="invalid-feedback"><i class="fas fa-exclamation-triangle fa-lg"></i> Oops! Please enter 1 or more characters.</div>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            <div class="form-row">
+            <div class="row">
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
                         <label for="emailInput">Email</label>
@@ -54,7 +54,7 @@
                     </div>
                 </div>
             </div>
-            <div class="form-row">
+            <div class="row">
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
                         <label for="dateInput">Date</label>
@@ -72,7 +72,7 @@
                     </div>
                 </div>
             </div>
-            <div class="form-row">
+            <div class="row">
                 <div class="col-md-4 mb-3">
                     <div class="form-group select-control">
                         <label for="selectInput">Select</label>
@@ -101,7 +101,7 @@
                     </div>
                 </div>
             </div>
-            <div class="form-row">
+            <div class="row">
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Textarea</label>
@@ -122,7 +122,7 @@
                     </div>
                 </div>
             </div>
-            <div class="form-row">
+            <div class="row">
                 <div class="col-md-4 mb-3">
                     <div>Checkbox group</div>
                     <div class="custom-control custom-checkbox">
@@ -159,10 +159,10 @@
                 </div>
             </div>
             <hr />
-            <div class="form-row">
+            <div class="row">
                 <div class="col-md-4 offset-md-4 mb-3 text-center">
-                    <button class="btn btn-primary" type="submit">Submit button</button>
-                    <button class="btn btn-light" type="reset">Reset button</button>
+                    <button class="btn btn-primary" type="submit">Submit form</button>
+                    <button class="btn btn-light" type="reset">Reset form</button>
                 </div>
                 <!-- <div class="col-md-6">
                     <input type="submit" class="btn btn-primary" value="Submit input" />
@@ -176,6 +176,7 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
     <!-- endbuild -->
 
