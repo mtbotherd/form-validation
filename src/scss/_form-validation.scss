@@ -15,18 +15,12 @@
 }
 
 .was-validated {
-    .valid-feedback.feedback-icon,
-    .invalid-feedback.feedback-icon {
-        position: absolute;
-        width: auto;
-        top: 42px;
-        right: 1rem;
-        margin-top: 0;
-    }
-
-    .feedback-icon.number-control,
-    .feedback-icon.number-control:focus,
-    .form-control:invalid:focus {
-        right: 2.5rem;
-    }
+    // .valid-feedback i,
+    // .invalid-feedback i {
+    //     position: absolute;
+    //     width: auto;
+    //     top: 45px;
+    //     right: 1rem;
+    //     margin-top: 0;
+    // }
 }

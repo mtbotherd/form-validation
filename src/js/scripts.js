@@ -33,18 +33,4 @@ $(document).ready(function() {
             });
         }, false);
     })();
-
-    // Move validation icons off of input controls.
-    $("input[type='number']").on("mouseenter", function() {
-        console.log("Added class.");
-        $(this).siblings(".feedback-icon").addClass("number-control");
-    });
-    $("input[type='number']").on("focusin", function() {
-        console.log("Added class.");
-        $(this).siblings(".feedback-icon").addClass("number-control");
-    });
-    $("input[type='number']").on("mouseleave", function() {
-        console.log("Added class.");
-        $(this).siblings(".feedback-icon").removeClass("number-control");
-    });
 });

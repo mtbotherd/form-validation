@@ -6381,19 +6381,6 @@ a.text-dark:hover, a.text-dark:focus {
   font-weight: 900;
   content: "\f574"; }
 
-.was-validated .valid-feedback.feedback-icon,
-.was-validated .invalid-feedback.feedback-icon {
-  position: absolute;
-  width: auto;
-  top: 42px;
-  right: 1rem;
-  margin-top: 0; }
-
-.was-validated .feedback-icon.number-control,
-.was-validated .feedback-icon.number-control:focus,
-.was-validated .form-control:invalid:focus {
-  right: 2.5rem; }
-
 /**************************************************
     Custom styles
 **************************************************/
