@@ -40,6 +40,13 @@ gulp.task('vendorCss', function() {
         .pipe(gulp.dest('dist/css'))
 });
 
+// Copy sourcemaps to dist
+gulp.task('sourcemaps', function() {
+    return gulp.src('src/maps/**/*.map')
+        .pipe(gulp.dest('dist/maps'))
+});
+
+
 // Compile sass to css
 gulp.task('sass', function() {
     return gulp.src('src/scss/*.scss')
@@ -104,7 +111,7 @@ gulp.task('default', function(callback) {
 gulp.task('build', function(callback) {
     runSequence(
         'clean:dist',
-        'sass', ['useref', 'vendorCss', 'images'],
+        'sass', ['useref', 'vendorCss', 'images', 'sourcemaps'],
         callback
     )
 });

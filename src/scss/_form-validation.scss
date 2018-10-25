@@ -1,0 +1,32 @@
+/**************************************************
+    Custom styles
+**************************************************/
+.needs-validation {
+    .input-group > .form-control:not(:last-child), .input-group > .custom-select:not(:last-child) {
+        border-top-right-radius: .25rem;
+        border-bottom-right-radius: .25rem;
+    }
+
+    .custom-file-input:lang(en) ~ .custom-file-label::after {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f574";
+    }
+}
+
+.was-validated {
+    .valid-feedback.feedback-icon,
+    .invalid-feedback.feedback-icon {
+        position: absolute;
+        width: auto;
+        top: 42px;
+        right: 1rem;
+        margin-top: 0;
+    }
+
+    .feedback-icon.number-control,
+    .feedback-icon.number-control:focus,
+    .form-control:invalid:focus {
+        right: 2.5rem;
+    }
+}

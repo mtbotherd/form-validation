@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     // Bootstrap 4 validation - Example starter JavaScript for disabling form submissions if there are invalid fields
     (function() {
-        'use strict';
+        //'use strict';
         window.addEventListener('load', function() {
             // Fetch all the forms we want to apply custom Bootstrap validation styles to
             var forms = document.getElementsByClassName('needs-validation');
@@ -33,4 +33,18 @@ $(document).ready(function() {
             });
         }, false);
     })();
+
+    // Move validation icons off of input controls.
+    $("input[type='number']").on("mouseenter", function() {
+        console.log("Added class.");
+        $(this).siblings(".feedback-icon").addClass("number-control");
+    });
+    $("input[type='number']").on("focusin", function() {
+        console.log("Added class.");
+        $(this).siblings(".feedback-icon").addClass("number-control");
+    });
+    $("input[type='number']").on("mouseleave", function() {
+        console.log("Added class.");
+        $(this).siblings(".feedback-icon").removeClass("number-control");
+    });
 });
