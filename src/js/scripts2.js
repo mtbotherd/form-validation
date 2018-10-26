@@ -1,85 +1,95 @@
+// just for the demos, avoids form submit
+jQuery.validator.setDefaults({
+    debug: true,
+    success: "valid"
+});
+
 $(document).ready(function() {
-    $( "#sampleForm" ).validate( {
-		rules: {
-            textInput: "required",
-            numberInput: "required"
-			// firstname1: "required",
-			// lastname1: "required",
-			// username1: {
-			// 	required: true,
-			// 	minlength: 2
-			// },
-			// password1: {
-			// 	required: true,
-			// 	minlength: 5
-			// },
-			// confirm_password1: {
-			// 	required: true,
-			// 	minlength: 5,
-			// 	equalTo: "#password1"
-			// },
-			// email1: {
-			// 	required: true,
-			// 	email: true
-			// },
-			// agree1: "required"
-		},
-		messages: {
-            textInput: "Please enter some text.",
-            numberInput: "Please enter a valid number."
-			// firstname1: "Please enter your firstname",
-			// lastname1: "Please enter your lastname",
-			// username1: {
-			// 	required: "Please enter a username",
-			// 	minlength: "Your username must consist of at least 2 characters"
-			// },
-			// password1: {
-			// 	required: "Please provide a password",
-			// 	minlength: "Your password must be at least 5 characters long"
-			// },
-			// confirm_password1: {
-			// 	required: "Please provide a password",
-			// 	minlength: "Your password must be at least 5 characters long",
-			// 	equalTo: "Please enter the same password as above"
-			// },
-			// email1: "Please enter a valid email address",
-			// agree1: "Please accept our policy"
-		},
-		errorElement: "em",
-		errorPlacement: function ( error, element ) {
-			// Add the `help-block` class to the error element
-			error.addClass( "help-block" );
+    $("#form2").validate({
+        rules: {
+            text: "required",
+            number: "required",
+            email: {
+                required: true,
+                email: true
+            },
+            password: "required",
+            date: "required",
+            url: {
+                required: true,
+                url: true,
+                normalizer: function(value) {
+                    var url = value;
+                    // Check if it doesn't start with http:// or https://.
+                    if (url && url.substr(0, 7) !== "http://" && url.substr(0, 8) !== "https://") {
+                        //then prefix with http://
+                        url = "http://" + url;
+                    }
+                    // Return the new urlInput
+                    return url;
+                }
+            },
+            select: "required",
+            selectMultiple: "required",
+            textarea: "required",
+            file: "required",
+            checkbox: "required",
+            checkboxGroup: "required",
+            radio: "required"
+        },
+        messages: {
+            text: "Please enter some text.",
+            number: "Please enter a number.",
+            email: {
+                required: "Please enter an email address.",
+                email: "Your email address must be in the format of name@domain.com."
+            },
+            password: "Please enter a password.",
+            date: "Please enter a date.",
+            url: "Please enter a valid url.",
+            select: "Please select an option.",
+            selectMultiple: "Please select at least one option.",
+            textarea: "Please enter some text.",
+            file: "Please select a file to upload",
+            checkbox: "Please check the box.",
+            checkboxGroup: "Please check at least one box.",
+            radio: "Please choose one."
+        },
+        //errorElement: "em",
+        errorPlacement: function(error, element) {
+            // Add the `help-block` class to the error element
+            error.addClass("help-block");
 
-			// Add `has-feedback` class to the parent div.form-group
-			// in order to add icons to inputs
-			element.parents( ".input-container" ).addClass( "has-feedback" );
+            // Add `has-feedback` class to the parent div.form-group
+            // in order to add icons to inputs
+            element.parents(".col-md-12").addClass("has-feedback");
 
-			if ( element.prop( "type" ) === "checkbox" ) {
-				error.insertAfter( element.parent( "label" ) );
-			} else {
-				error.insertAfter( element );
-			}
+            if (element.prop("type") === "checkbox") {
+                error.insertAfter(element.parent("label"));
+            } else {
+                error.insertAfter(element);
+            }
 
-			// Add the span element, if doesn't exists, and apply the icon classes to it.
-			if ( !element.next( "span" )[ 0 ] ) {
-                $( "<span class='fas fa-exclamation-triangle fa-lg form-control-feedback'></span>" ).insertAfter( element );
-				// $( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
-			}
-		},
-		success: function ( label, element ) {
-			// Add the span element, if doesn't exists, and apply the icon classes to it.
-			if ( !$( element ).next( "span" )[ 0 ] ) {
-				$( "<span class='fas fa-check fa-lg form-control-feedback'></span>" ).insertAfter( $( element ) );
-			}
-		},
-		highlight: function ( element, errorClass, validClass ) {
-			$( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-			$( element ).next( "span" ).addClass( "fa-exclamation-triangle" ).removeClass( "fa-check" );
-		},
-		unhighlight: function ( element, errorClass, validClass ) {
-			$( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-			$( element ).next( "span" ).addClass( "fa-check" ).removeClass( "fa-exclamation-triangle" );
-		}
-	} );
+            // Add the div element, if doesn't exists, and apply the icon classes to it.
+            if (!element.next("div")[0]) {
+                $("<div class='fas fa-exclamation-triangle fa-lg form-control-feedback'></div>").insertAfter(element);
+                // $( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+            }
+        },
+        success: function(label, element) {
+            // Add the div element, if doesn't exists, and apply the icon classes to it.
+            if (!$(element).next("div")[0]) {
+                $("<div class='fas fa-check fa-lg form-control-feedback'></div>").insertAfter($(element));
+            }
+        },
+        highlight: function(element, errorClass, validClass) {
+            $(element).parents(".col-md-12").addClass("has-error").removeClass("has-success");
+            $(element).next("div").addClass("fa-exclamation-triangle").removeClass("fa-check");
+        },
+        unhighlight: function(element, errorClass, validClass) {
+            $(element).parents(".col-md-12").addClass("has-success").removeClass("has-error");
+            $(element).next("div").addClass("fa-check").removeClass("fa-exclamation-triangle");
+        }
+    });
 
 });
