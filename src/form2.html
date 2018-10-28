@@ -18,12 +18,12 @@
         <h1>Form Validation</h1>
         <p class="lead">This is a Bootstrap 4 form with examples of the form types used on metrotransit.org.</p>
         <p>Client side validation is handled using <a href="https://jqueryvalidation.org/" target="_blank">jQuery.validate.js</a>.</p>
-        <form id="form2" class="needs-validation" method="post" action="" novalidate="nonvalidate">
+        <form id="form2" method="post" action="" novalidate="nonvalidate">
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
                         <label for="textfield">Text</label>
-                        <div class="col-md-12">
+                        <div class="input-container">
                             <input type="text" class="form-control" id="textfield" name="text" placeholder="Can use any characters" required>
                         </div>
                     </div>
@@ -31,9 +31,9 @@
                 <div class="col-md-4 offset-md-2">
                     <div class="form-group">
                         <label for="numberfield">Number (+/-)</label>
-                        <input type="number" class="form-control" id="numberfield" name="number" placeholder="Numbers only" required>
-                        <!-- <div class="invalid-feedback"><i class="fas fa-exclamation-triangle fa-lg"></i> Please enter a number (+/-).</div>
-                        <div class="valid-feedback">Number is valid! <i class="fas fa-check fa-lg"></i></div> -->
+                        <div class="input-container">
+                            <input type="number" class="form-control" id="numberfield" name="number" placeholder="Numbers only" required>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -41,17 +41,19 @@
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
                         <label for="emailfield">Email</label>
-                        <input type="email" class="form-control" id="emailfield" name="email" placeholder="Valid email address" required>
-                        <!-- <div class="invalid-feedback"><i class="fas fa-exclamation-triangle fa-lg"></i> Please enter a valid email address.</div>
-                        <div class="valid-feedback">Looks good! <i class="fas fa-check fa-lg"></i></div> -->
+                        <div class="input-container">
+                            <input type="email" class="form-control" id="emailfield" name="email" placeholder="Valid email address" required>
+                            <!-- <div class="invalid-feedback"><i class="fas fa-exclamation-triangle fa-lg"></i> Please enter a valid email address.</div>
+                            <div class="valid-feedback">Looks good! <i class="fas fa-check fa-lg"></i></div> -->
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4 offset-md-2">
                     <div class="form-group">
                         <label for="passwordfield">Password</label>
-                        <input type="password" class="form-control" id="passwordfield" name="password" required>
-                        <!-- <div class="invalid-feedback"><i class="fas fa-exclamation-triangle fa-lg"></i> Please enter an password.</div>
-                        <div class="valid-feedback">Looks good! <i class="fas fa-check fa-lg"></i></div> -->
+                        <div class="input-container">
+                            <input type="password" class="form-control" id="passwordfield" name="password" required>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -59,17 +61,17 @@
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
                         <label for="datefield">Date</label>
-                        <input type="date" class="form-control" id="datefield" name="date" required>
-                        <!-- <div class="invalid-feedback"><i class="fas fa-exclamation-triangle fa-lg"></i> Please enter or select a date.</div>
-                        <div class="valid-feedback">Looks good! <i class="fas fa-check fa-lg"></i></div> -->
+                        <div class="input-container">
+                            <input type="date" class="form-control" id="datefield" name="date" required>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4 offset-md-2">
                     <div class="form-group">
                         <label for="urlfield">URL</label>
-                        <input type="url" class="form-control" id="urlfield" name="url" value="http://" required>
-                        <!-- <div class="invalid-feedback"><i class="fas fa-exclamation-triangle fa-lg"></i> Please enter a valid url.</div>
-                        <div class="valid-feedback">Looks good! <i class="fas fa-check fa-lg"></i></div> -->
+                        <div class="input-container">
+                            <input type="url" class="form-control" id="urlfield" name="url" value="http://" required>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -77,28 +79,28 @@
                 <div class="col-md-4 mb-3">
                     <div class="form-group select-control">
                         <label for="selectfield">Select</label>
-                        <select id="selectfield" class="custom-select" name="select" required>
-                            <option value="">Choose...</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                        <!-- <div class="invalid-feedback"><i class="fas fa-exclamation-triangle fa-lg"></i> Please select an option.</div>
-                        <div class="valid-feedback">Looks good! <i class="fas fa-check fa-lg"></i></div> -->
+                        <div class="input-container">
+                            <select id="selectfield" class="custom-select" name="select" required>
+                                <option value="">Choose...</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4 offset-md-2">
                     <div class="form-group">
                         <label for="selectMultiple">Select multiple</label>
-                        <select id="selectMultiple" class="custom-select" name="selectMultiple" size="3" multiple required>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                            <option value="4">Four</option>
-                            <option value="5">Five</option>
-                        </select>
-                        <!-- <div class="invalid-feedback"><i class="fas fa-exclamation-triangle fa-lg"></i> Please select at least one option.</div>
-                        <div class="valid-feedback">Looks good! <i class="fas fa-check fa-lg"></i></div> -->
+                        <div class="input-container">
+                            <select id="selectMultiple" class="custom-select" name="selectMultiple" size="3" multiple required>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                                <option value="4">Four</option>
+                                <option value="5">Five</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -106,28 +108,30 @@
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
                         <label for="textareafield">Textarea</label>
-                        <textarea class="form-control" id="textareafield" name="textarea" rows="3" placeholder="Type here..." required></textarea>
-                        <!-- <div class="invalid-feedback"><i class="fas fa-exclamation-triangle fa-lg"></i> Please enter some text.</div>
-                        <div class="valid-feedback">Looks good! <i class="fas fa-check fa-lg"></i></div> -->
+                        <div class="input-container">
+                            <textarea class="form-control" id="textareafield" name="textarea" rows="3" placeholder="Type here..." required></textarea>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4 offset-md-2">
                     <div class="form-group">
                         <label for="filefield">File</label>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="filefield" name="file" required>
+                            <div class="input-container">
+                                <input type="file" class="custom-file-input" id="filefield" name="file" required>
+                            </div>
                             <label class="custom-file-label">Choose file</label>
-                            <!-- <div class="invalid-feedback"><i class="fas fa-exclamation-triangle fa-lg"></i> Please select a file to upload.</div>
-                            <div class="valid-feedback">Looks good! <i class="fas fa-check fa-lg"></i></div> -->
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-2 mb-3">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" name="checkbox" class="custom-control-input" id="checkbox" required>
-                        <label class="custom-control-label" for="checkbox">Checkbox</label>
+                    <div class="input-container">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="checkbox" class="custom-control-input" id="checkbox" required>
+                            <label class="custom-control-label" for="checkbox">Checkbox</label>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-2 mb-3">
@@ -137,31 +141,29 @@
                         <label class="custom-control-label" for="checkbox1">Checkbox 1</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" name="checkboxGroup" class="custom-control-input" id="checkbox2" required>
+                        <input type="checkbox" name="checkboxGroup" class="custom-control-input" id="checkbox2">
                         <label class="custom-control-label" for="checkbox2">Checkbox 2</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" name="checkboxGroup" class="custom-control-input" id="checkbox3" required>
+                        <input type="checkbox" name="checkboxGroup" class="custom-control-input" id="checkbox3">
                         <label class="custom-control-label" for="checkbox3">Checkbox 3</label>
-                        <!-- <div class="invalid-feedback"><i class="fas fa-exclamation-triangle fa-lg"></i> Please check at least 1 box.</div>
-                        <div class="valid-feedback">Looks good! <i class="fas fa-check fa-lg"></i></div> -->
                     </div>
                 </div>
                 <div class="col-md-4 offset-md-2">
                     <div>Radio button group</div>
-                    <div class="custom-control custom-radio">
-                        <input type="radio" id="radio1" name="radio" class="custom-control-input" required>
-                        <label class="custom-control-label" for="radio1">Radio 1</label>
-                    </div>
-                    <div class="custom-control custom-radio">
-                        <input type="radio" id="radio2" name="radio" class="custom-control-input" required>
-                        <label class="custom-control-label" for="radio2">Radio 2</label>
-                    </div>
-                    <div class="custom-control custom-radio">
-                        <input type="radio" id="radio3" name="radio" class="custom-control-input" required>
-                        <label class="custom-control-label" for="radio3">Radio 3</label>
-                        <!-- <div class="invalid-feedback"><i class="fas fa-exclamation-triangle fa-lg"></i> Please choose one.</div>
-                        <div class="valid-feedback">Looks good! <i class="fas fa-check fa-lg"></i></div> -->
+                    <div class="input-container">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="radio1" name="radio" class="custom-control-input" required>
+                            <label class="custom-control-label" for="radio1">Radio 1</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="radio2" name="radio" class="custom-control-input">
+                            <label class="custom-control-label" for="radio2">Radio 2</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="radio3" name="radio" class="custom-control-input">
+                            <label class="custom-control-label" for="radio3">Radio 3</label>
+                        </div>
                     </div>
                 </div>
             </div>

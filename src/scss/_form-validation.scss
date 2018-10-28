@@ -1,6 +1,7 @@
 /**************************************************
     Custom styles
 **************************************************/
+// Form1
 .needs-validation {
     .input-group > .form-control:not(:last-child), .input-group > .custom-select:not(:last-child) {
         border-top-right-radius: .25rem;
@@ -23,4 +24,72 @@
     //     right: 1rem;
     //     margin-top: 0;
     // }
+}
+
+
+// Form2
+.help-block {
+    font-style: italic;
+}
+.custom-checkbox {
+
+    .help-block {
+        color: $red;
+        display: block;
+    }
+
+    .fa-exclamation-triangle {
+        position: absolute;
+        bottom: -1.25rem;
+        left: 0;
+    }
+}
+
+label#checkbox-error {
+    margin-left: 1.2rem;
+}
+label.error {
+    display: none;
+}
+
+.has-error {
+
+    .form-control {
+        border-color: $red !important;
+    }
+
+    .form-control:focus {
+        box-shadow: 0 0 0 0.2rem rgba(220,53,69,.25), 0 0 6px $red;
+        -webkit-box-shadow: 0 0 0 0.2rem rgba(220,53,69,.25), 0 0 6px $red;
+    }
+
+    .form-control-feedback {
+        margin-right: 0.25rem;
+    }
+
+    .fa-exclamation-triangle:before,
+    .help-block {
+        color: $red;
+    }
+}
+
+.has-success {
+    .form-control {
+        border-color: $green;
+    }
+
+    .form-control:focus {
+        box-shadow: 0 0 0 0.2rem rgba(40,167,69,.25), 0 0 6px $green;
+        -webkit-box-shadow: 0 0 0 0.2rem rgba(40,167,69,.25), 0 0 6px $green;
+    }
+
+    .fa-check:before {
+        color: $green;
+    }
+
+    .form-control-feedback {
+        position: absolute;
+        top: 2.75rem;
+        right: 1.5rem;
+    }
 }
