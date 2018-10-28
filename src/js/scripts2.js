@@ -6,6 +6,9 @@ jQuery.validator.setDefaults({
 
 $(document).ready(function() {
     $("#form2").validate({
+        groups: {
+            name: "checkboxGroup1[] checkboxGroup2[] checkboxGroup3[]"
+        },
         rules: {
             text: "required",
             number: "required",
@@ -34,8 +37,17 @@ $(document).ready(function() {
             textarea: "required",
             file: "required",
             checkbox: "required",
-            checkboxGroup: "required",
-            radio: "required"
+            checkboxGroup: "required"
+            // "checkboxGroup1[]": {
+            //     require_form_group: [1, ".checkbox-group"]
+            // },
+            // "checkboxGroup2[]": {
+            //     require_form_group: [1, ".checkbox-group"]
+            // },
+            // "checkboxGroup3[]": {
+            //     require_form_group: [1, ".checkbox-group"]
+            // },
+            // radio: "required"
         },
         messages: {
             text: "Please enter some text.",
@@ -64,27 +76,12 @@ $(document).ready(function() {
             // in order to add icons to inputs
             element.parents(".input-container").addClass("has-feedback");
 
-            //error.insertAfter(element);
-
-            // Error message for checkbox
-            if (element.attr("name") === "checkbox") {
+            // Error message placement for checkbox
+            if (element.prop("type") === "checkbox") {
                 error.insertAfter(element.parent("div"));
-            }
-            else {
+            } else {
                 error.insertAfter(element);
             }
-
-            // if (element.attr("name") === "radio") {
-            //     error.insertAfter(element.parent("label"));
-            // } else {
-            //     error.insertAfter(element);
-            // }
-            //
-            // if (element.attr("name") == "checkboxGroup"){
-            //     error.insertAfter("label[for='checkbox3']");
-            // } else {
-            //     error.insertAfter(element);
-            // }
 
             // Add the div element, if doesn't exists, and apply the icon classes to it.
             if (!element.next("div")[0]) {
@@ -95,7 +92,7 @@ $(document).ready(function() {
         success: function(label, element) {
             // Add the div element, if doesn't exists, and apply the icon classes to it.
             if (!$(element).next("div")[0]) {
-                $("<div class='fas fa-check form-control-feedback'></div>").insertAfter($(element));
+                $("<i class='fas fa-check form-control-feedback'></i>").insertAfter($(element));
             }
         },
         highlight: function(element, errorClass, validClass) {

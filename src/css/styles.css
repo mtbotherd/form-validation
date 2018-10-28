@@ -6381,23 +6381,11 @@ a.text-dark:hover, a.text-dark:focus {
   font-weight: 900;
   content: "\f574"; }
 
-.help-block {
-  font-style: italic; }
-
-.custom-checkbox .help-block {
-  color: #ed1b2e;
-  display: block; }
-
-.custom-checkbox .fa-exclamation-triangle {
-  position: absolute;
-  bottom: -1.25rem;
-  left: 0; }
-
 label#checkbox-error {
   margin-left: 1.2rem; }
 
-label.error {
-  display: none; }
+.has-error .help-block {
+  font-style: italic; }
 
 .has-error .form-control {
   border-color: #ed1b2e !important; }
@@ -6405,6 +6393,15 @@ label.error {
 .has-error .form-control:focus {
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25), 0 0 6px #ed1b2e;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25), 0 0 6px #ed1b2e; }
+
+.has-error .checkbox-input .fa-exclamation-triangle {
+  position: absolute;
+  bottom: -1.25rem;
+  left: 0; }
+
+.has-error .checkbox-input .fa-check {
+  bottom: 0;
+  left: 0; }
 
 .has-error .form-control-feedback {
   margin-right: 0.25rem; }
@@ -6427,6 +6424,10 @@ label.error {
   position: absolute;
   top: 2.75rem;
   right: 1.5rem; }
+  .has-success .form-control-feedback.fa-check {
+    top: 2rem;
+    right: 0;
+    left: 0; }
 
 /**************************************************
     Custom styles
