@@ -37,17 +37,17 @@ $(document).ready(function() {
             textarea: "required",
             file: "required",
             checkbox: "required",
-            checkboxGroup: "required"
+            checkboxGroup: "required",
             // "checkboxGroup1[]": {
-            //     require_form_group: [1, ".checkbox-group"]
+            //     require_form_group: [1, ".custom-control-input"]
             // },
             // "checkboxGroup2[]": {
-            //     require_form_group: [1, ".checkbox-group"]
+            //     require_form_group: [1, ".custom-control-input"]
             // },
             // "checkboxGroup3[]": {
-            //     require_form_group: [1, ".checkbox-group"]
+            //     require_form_group: [1, ".custom-control-input"]
             // },
-            // radio: "required"
+            radio: "required"
         },
         messages: {
             text: "Please enter some text.",
@@ -76,9 +76,15 @@ $(document).ready(function() {
             // in order to add icons to inputs
             element.parents(".input-container").addClass("has-feedback");
 
-            // Error message placement for checkbox
+            // Error message placement for checkbox. This is for the text only.
             if (element.prop("type") === "checkbox") {
                 error.insertAfter(element.parent("div"));
+            } else {
+                error.insertAfter(element);
+            }
+
+            if (element.prop("id") === "checkbox1" || element.prop("id") === "checkbox2" || element.prop("id") === "checkbox3"){
+                error.insertAfter(".checkbox-group");
             } else {
                 error.insertAfter(element);
             }
@@ -87,6 +93,8 @@ $(document).ready(function() {
             if (!element.next("div")[0]) {
                 $("<div class='fas fa-exclamation-triangle fa-sm form-control-feedback'></div>").insertAfter(element);
                 // $( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+            } else {
+                error.insertAfter(element);
             }
         },
         success: function(label, element) {

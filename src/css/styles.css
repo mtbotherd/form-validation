@@ -6399,10 +6399,6 @@ label#checkbox-error {
   bottom: -1.25rem;
   left: 0; }
 
-.has-error .checkbox-input .fa-check {
-  bottom: 0;
-  left: 0; }
-
 .has-error .form-control-feedback {
   margin-right: 0.25rem; }
 
@@ -6424,10 +6420,6 @@ label#checkbox-error {
   position: absolute;
   top: 2.75rem;
   right: 1.5rem; }
-  .has-success .form-control-feedback.fa-check {
-    top: 2rem;
-    right: 0;
-    left: 0; }
 
 /**************************************************
     Custom styles

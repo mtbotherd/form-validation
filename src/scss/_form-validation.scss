@@ -54,11 +54,6 @@ label#checkbox-error {
             bottom: -1.25rem;
             left: 0;
         }
-
-        .fa-check {
-            bottom: 0;
-            left: 0;
-        }
     }
 
     .form-control-feedback {
@@ -89,11 +84,5 @@ label#checkbox-error {
         position: absolute;
         top: 2.75rem;
         right: 1.5rem;
-
-        &.fa-check { // Position success icon for single checkbox
-            top: 2rem;
-            right: 0;
-            left: 0;
-        }
     }
 }
