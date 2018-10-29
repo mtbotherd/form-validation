@@ -67,7 +67,7 @@ $(document).ready(function() {
 
             // Error message placement for checkbox. This is for the text only.
             if (element.prop("type") === "checkbox" || element.prop("type") === "radio") {
-                error.insertAfter(element.parents(".form-group"));
+                error.appendTo(element.parents(".form-group"));
             } else {
                 error.insertAfter(element);
             }
