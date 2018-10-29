@@ -1,24 +1,21 @@
-// just for the demos, avoids form submit
 jQuery.validator.setDefaults({
     debug: true,
-    success: "valid"
-});
-
+    submitHandler: function() {
+        alert("submitted!");
+    }
+})
 $(document).ready(function() {
     $("#form2").validate({
-        groups: {
-            name: "checkboxGroup1[] checkboxGroup2[] checkboxGroup3[]"
-        },
         rules: {
-            text: "required",
-            number: "required",
-            email: {
+            textField: "required",
+            numberField: "required",
+            emailField: {
                 required: true,
                 email: true
             },
-            password: "required",
-            date: "required",
-            url: {
+            passwordField: "required",
+            dateField: "required",
+            urlField: {
                 required: true,
                 url: true,
                 normalizer: function(value) {
@@ -32,83 +29,68 @@ $(document).ready(function() {
                     return url;
                 }
             },
-            select: "required",
-            selectMultiple: "required",
-            textarea: "required",
-            file: "required",
-            checkbox: "required",
+            selectField: "required",
+            selectMultipleField: "required",
+            textareaField: "required",
+            fileUploadField: "required",
+            checkboxSingle: "required",
             checkboxGroup: "required",
-            // "checkboxGroup1[]": {
-            //     require_form_group: [1, ".custom-control-input"]
-            // },
-            // "checkboxGroup2[]": {
-            //     require_form_group: [1, ".custom-control-input"]
-            // },
-            // "checkboxGroup3[]": {
-            //     require_form_group: [1, ".custom-control-input"]
-            // },
-            radio: "required"
+            radioGroup: "required"
         },
         messages: {
-            text: "Please enter some text.",
-            number: "Please enter a number.",
-            email: {
+            textField: "Please enter some text.",
+            numberField: "Please enter a number.",
+            emailField: {
                 required: "Please enter an email address.",
                 email: "Your email address must be in the format of name@domain.com."
             },
-            password: "Please enter a password.",
-            date: "Please enter a date.",
-            url: "Please enter a valid url.",
-            select: "Please select an option.",
-            selectMultiple: "Please select at least one option.",
-            textarea: "Please enter some text.",
-            file: "Please select a file to upload",
-            checkbox: "Please check the box.",
+            passwordField: "Please enter a password.",
+            dateField: "Please enter a date.",
+            urlField: "Please enter a valid url.",
+            selectField: "Please select an option.",
+            selectMultipleField: "Please select at least one option.",
+            textareaField: "Please enter some text.",
+            fileUploadField: "Please select a file to upload",
+            checkboxSingle: "Please check the box.",
             checkboxGroup: "Please check at least one box.",
-            radio: "Please choose one."
+            radioGroup: "Please choose one."
         },
-        //errorElement: "em",
+        errorElement: "em",
         errorPlacement: function(error, element) {
             // Add the `help-block` class to the error element
             error.addClass("help-block");
 
-            // Add `has-feedback` class to the parent div.input-container
-            // in order to add icons to inputs
-            element.parents(".input-container").addClass("has-feedback");
+            //error.insertAfter(element);
+
+            // Add `has-feedback` class to the parent div.input-container in order to add icons to inputs
+            //element.parents(".input-container").addClass("has-feedback");
 
             // Error message placement for checkbox. This is for the text only.
-            if (element.prop("type") === "checkbox") {
-                error.insertAfter(element.parent("div"));
-            } else {
-                error.insertAfter(element);
-            }
-
-            if (element.prop("id") === "checkbox1" || element.prop("id") === "checkbox2" || element.prop("id") === "checkbox3"){
-                error.insertAfter(".checkbox-group");
+            if (element.prop("type") === "checkbox" || element.prop("type") === "radio") {
+                error.insertAfter(element.parents(".form-group"));
             } else {
                 error.insertAfter(element);
             }
 
             // Add the div element, if doesn't exists, and apply the icon classes to it.
             if (!element.next("div")[0]) {
-                $("<div class='fas fa-exclamation-triangle fa-sm form-control-feedback'></div>").insertAfter(element);
-                // $( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+                $("<div class='form-control-feedback fas fa-exclamation-triangle fa-sm'></div>").insertAfter(element);
             } else {
                 error.insertAfter(element);
             }
         },
         success: function(label, element) {
-            // Add the div element, if doesn't exists, and apply the icon classes to it.
+            //Add the div element, if doesn 't exists, and apply the icon classes to it.
             if (!$(element).next("div")[0]) {
-                $("<i class='fas fa-check form-control-feedback'></i>").insertAfter($(element));
+                $("<div class='form-control-feedback fas fa-check fa-sm'></div>").insertAfter($(element));
             }
         },
         highlight: function(element, errorClass, validClass) {
-            $(element).parents(".input-container").addClass("has-error").removeClass("has-success");
+            $(element).parents(".form-group").addClass("has-error").removeClass("has-success");
             $(element).next("div").addClass("fa-exclamation-triangle").removeClass("fa-check");
         },
         unhighlight: function(element, errorClass, validClass) {
-            $(element).parents(".input-container").addClass("has-success").removeClass("has-error");
+            $(element).parents(".form-group").addClass("has-success").removeClass("has-error");
             $(element).next("div").addClass("fa-check").removeClass("fa-exclamation-triangle");
         }
     });

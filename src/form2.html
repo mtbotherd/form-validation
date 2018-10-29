@@ -22,104 +22,82 @@
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
-                        <label for="textfield">Text</label>
-                        <div class="input-container">
-                            <input type="text" class="form-control" id="textfield" name="text" placeholder="Can use any characters" required>
-                        </div>
+                        <label for="textField">Text field</label>
+                        <input type="text" id="textField" class="form-control" name="textField" placeholder="Can use any characters">
                     </div>
                 </div>
                 <div class="col-md-4 offset-md-2">
                     <div class="form-group">
-                        <label for="numberfield">Number (+/-)</label>
-                        <div class="input-container">
-                            <input type="number" class="form-control" id="numberfield" name="number" placeholder="Numbers only" required>
-                        </div>
+                        <label for="numberField">Number field (+/-)</label>
+                        <input type="number" id="numberField" class="form-control" name="numberField" placeholder="Numbers only">
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
-                        <label for="emailfield">Email</label>
-                        <div class="input-container">
-                            <input type="email" class="form-control" id="emailfield" name="email" placeholder="Valid email address" required>
-                            <!-- <div class="invalid-feedback"><i class="fas fa-exclamation-triangle fa-lg"></i> Please enter a valid email address.</div>
-                            <div class="valid-feedback">Looks good! <i class="fas fa-check fa-lg"></i></div> -->
-                        </div>
+                        <label for="emailField">Email field</label>
+                        <input type="email" id="emailField" class="form-control" name="emailField" placeholder="Valid email address">
                     </div>
                 </div>
                 <div class="col-md-4 offset-md-2">
                     <div class="form-group">
-                        <label for="passwordfield">Password</label>
-                        <div class="input-container">
-                            <input type="password" class="form-control" id="passwordfield" name="password" required>
-                        </div>
+                        <label for="passwordField">Password field</label>
+                        <input type="password" id="passwordField" class="form-control" name="passwordField">
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
-                        <label for="datefield">Date</label>
-                        <div class="input-container">
-                            <input type="date" class="form-control" id="datefield" name="date" required>
-                        </div>
+                        <label for="dateField">Date field (uses the HTML5 datepicker by default)</label>
+                        <input type="date" id="dateField" class="form-control" name="dateField">
                     </div>
                 </div>
                 <div class="col-md-4 offset-md-2">
                     <div class="form-group">
-                        <label for="urlfield">URL</label>
-                        <div class="input-container">
-                            <input type="url" class="form-control" id="urlfield" name="url" value="http://" required>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <div class="form-group select-control">
-                        <label for="selectfield">Select</label>
-                        <div class="input-container">
-                            <select id="selectfield" class="custom-select" name="select" required>
-                                <option value="">Choose...</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 offset-md-2">
-                    <div class="form-group">
-                        <label for="selectMultiple">Select multiple</label>
-                        <div class="input-container">
-                            <select id="selectMultiple" class="custom-select" name="selectMultiple" size="3" multiple required>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                                <option value="4">Four</option>
-                                <option value="5">Five</option>
-                            </select>
-                        </div>
+                        <label for="urlField">URL field</label>
+                        <input type="url" id="urlField" class="form-control" name="urlField" value="http://">
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
-                        <label for="textareafield">Textarea</label>
-                        <div class="input-container">
-                            <textarea class="form-control" id="textareafield" name="textarea" rows="3" placeholder="Type here..." required></textarea>
-                        </div>
+                        <label for="selectField">Select field</label>
+                        <select id="selectField" class="form-control" name="selectField">
+                            <option value="">Choose...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-md-4 offset-md-2">
                     <div class="form-group">
-                        <label for="filefield">File</label>
+                        <label for="selectMultipleField">Select multiple field</label>
+                        <select id="selectMultipleField" class="form-control" name="selectMultipleField" size="3" multiple>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="form-group">
+                        <label for="textareaField">Textarea</label>
+                        <textarea id="textareaField" class="form-control" name="textareaField" rows="3" placeholder="Type here..."></textarea>
+                    </div>
+                </div>
+                <div class="col-md-4 offset-md-2">
+                    <div class="form-group">
+                        <label for="fileUploadField">File</label>
                         <div class="custom-file">
-                            <div class="input-container">
-                                <input type="file" class="custom-file-input" id="filefield" name="file" required>
-                            </div>
+                            <input type="file" id="fileUploadField" class="custom-file-input" name="fileUploadField">
                             <label class="custom-file-label">Choose file</label>
                         </div>
                     </div>
@@ -127,53 +105,58 @@
             </div>
             <div class="row">
                 <div class="col-md-2 mb-3">
-                    <div class="input-container">
-                        <div class="custom-control custom-checkbox checkbox-input">
-                            <input type="checkbox" name="checkbox" class="custom-control-input" id="checkbox" required>
-                            <label class="custom-control-label" for="checkbox">Checkbox</label>
+                    <div class="form-group">
+                        <label class="checkboxSingle">Checkbox (single)</label>
+                        <div class="form-check">
+                            <input type="checkbox" id="checkboxSingle" class="form-check-input" name="checkboxSingle">
+                            <label class="form-check-label" for="checkbox">Checkbox</label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-2 mb-3">
-                    <div>Checkbox group</div>
-                    <div class="checkbox-group">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" name="checkboxGroup" class="custom-control-input" id="checkbox1">
-                            <label class="custom-control-label" for="checkbox1">Checkbox 1</label>
+                    <fieldset>
+                        <legend>Checkbox group</legend>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input type="checkbox" id="checkboxGroup1" class="form-check-input" name="checkboxGroup">
+                                <label class="form-check-label" for="checkboxGroup1">Checkbox</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="checkboxGroup2" class="form-check-input" name="checkboxGroup">
+                                <label class="form-check-label" for="checkboxGroup2">Checkbox</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="checkboxGroup3" class="form-check-input" name="checkboxGroup">
+                                <label class="form-check-label" for="checkboxGroup3">Checkbox</label>
+                            </div>
                         </div>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" name="checkboxGroup" class="custom-control-input" id="checkbox2">
-                            <label class="custom-control-label" for="checkbox2">Checkbox 2</label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" name="checkboxGroup" class="custom-control-input" id="checkbox3">
-                            <label class="custom-control-label" for="checkbox3">Checkbox 3</label>
-                        </div>
-                    </div>
+                    </fieldset>
                 </div>
                 <div class="col-md-4 offset-md-2">
-                    <div>Radio button group</div>
-                    <div class="input-container">
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="radio1" name="radio" class="custom-control-input" required>
-                            <label class="custom-control-label" for="radio1">Radio 1</label>
+                    <fieldset>
+                        <legend>Radio group</legend>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input type="radio" id="radioGroup1" class="form-check-input" name="radioGroup">
+                                <label class="form-check-label" for="radio1">Radio 1</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="radioGroup2" class="form-check-input" name="radioGroup">
+                                <label class="form-check-label" for="radio2">Radio 2</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="radioGroup3" class="form-check-input" name="radioGroup">
+                                <label class="form-check-label" for="radio3">Radio 3</label>
+                            </div>
                         </div>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="radio2" name="radio" class="custom-control-input">
-                            <label class="custom-control-label" for="radio2">Radio 2</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="radio3" name="radio" class="custom-control-input">
-                            <label class="custom-control-label" for="radio3">Radio 3</label>
-                        </div>
-                    </div>
+                    </fieldset>
                 </div>
             </div>
             <hr />
             <div class="row">
                 <div class="col-md-4 offset-md-4 mb-3 text-center">
                     <button type="submit" class="btn btn-primary" name="form2Submit" value="Submit form">Submit form</button>
-                    <button class="btn btn-light" type="reset">Reset form</button>
+                    <button type="reset" class="btn btn-light">Reset form</button>
                 </div>
             </div>
         </form>

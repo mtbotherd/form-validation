@@ -32,11 +32,11 @@ label#checkbox-error {
     margin-left: 1.2rem;
 }
 
-.has-error {
+legend {
+    font-size: initial;
+}
 
-    .help-block {
-        font-style: italic;
-    }
+.has-error {
 
     .form-control {
         border-color: $red !important;
@@ -47,22 +47,17 @@ label#checkbox-error {
         -webkit-box-shadow: 0 0 0 0.2rem rgba(220,53,69,.25), 0 0 6px $red;
     }
 
-    .checkbox-input { // Position error icon & message for single checkbox.
-
-        .fa-exclamation-triangle {
-            position: absolute;
-            bottom: -1.25rem;
-            left: 0;
-        }
-    }
-
     .form-control-feedback {
         margin-right: 0.25rem;
     }
 
-    .fa-exclamation-triangle:before,
+    .fa-exclamation-triangle:before {
+        color: $red;
+    }
+
     .help-block {
         color: $red;
+        font-style: italic;
     }
 }
 
