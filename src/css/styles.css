@@ -6370,51 +6370,42 @@ a.text-dark:hover, a.text-dark:focus {
         http://w3bits.com/sass-mixins/
 ############################################*/
 /**************************************************
-    Custom styles
+    Form styles
 **************************************************/
-.needs-validation .input-group > .form-control:not(:last-child), .needs-validation .input-group > .custom-select:not(:last-child) {
-  border-top-right-radius: .25rem;
-  border-bottom-right-radius: .25rem; }
-
-.needs-validation .custom-file-input:lang(en) ~ .custom-file-label::after {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f574"; }
-
-label#checkbox-error {
-  margin-left: 1.2rem; }
-
-legend {
+/**************************************************
+    Form validation styles
+**************************************************/
+form legend {
   font-size: initial; }
 
-.has-error .form-control {
+form .is-invalid .form-control {
   border-color: #ed1b2e !important; }
 
-.has-error .form-control:focus {
+form .is-invalid .form-control:focus {
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25), 0 0 6px #ed1b2e;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25), 0 0 6px #ed1b2e; }
 
-.has-error .form-control-feedback {
+form .is-invalid .form-control-feedback {
   margin-right: 0.25rem; }
 
-.has-error .fa-exclamation-triangle:before {
+form .is-invalid .fa-exclamation-triangle:before {
   color: #ed1b2e; }
 
-.has-error .help-block {
+form .is-invalid .help-block {
   color: #ed1b2e;
   font-style: italic; }
 
-.has-success .form-control {
+form .is-valid .form-control {
   border-color: #28a745; }
 
-.has-success .form-control:focus {
+form .is-valid .form-control:focus {
   box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25), 0 0 6px #28a745;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25), 0 0 6px #28a745; }
 
-.has-success .fa-check:before {
+form .is-valid .fa-check:before {
   color: #28a745; }
 
-.has-success .form-control-feedback {
+form .is-valid .form-control-feedback {
   position: absolute;
   top: 2.75rem;
   right: 1.5rem; }

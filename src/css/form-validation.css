@@ -1,0 +1,17 @@
+/**************************************************
+    Form validation styles
+**************************************************/
+label#checkbox-error {
+  margin-left: 1.2rem; }
+
+legend {
+  font-size: initial; }
+
+.is-invalid .form-check-label {
+  color: #ed1b2e; }
+
+.is-invalid .help-block {
+  color: #ed1b2e;
+  font-style: italic; }
+
+/*# sourceMappingURL=../maps/form-validation.css.map */
