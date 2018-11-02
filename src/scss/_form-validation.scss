@@ -17,6 +17,10 @@ form {
             -webkit-box-shadow: 0 0 0 0.2rem rgba(220,53,69,.25), 0 0 6px $red;
         }
 
+        .custom-file-label {
+            border-color: $red !important;
+        }
+
         .form-control-feedback {
             margin-right: 0.25rem;
         }
