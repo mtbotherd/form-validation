@@ -1,83 +1,64 @@
 /**************************************************
-    Custom styles
+    Form validation styles
 **************************************************/
-// Form1
-.needs-validation {
-    .input-group > .form-control:not(:last-child), .input-group > .custom-select:not(:last-child) {
-        border-top-right-radius: .25rem;
-        border-bottom-right-radius: .25rem;
+form {
+    legend {
+        font-size: initial;
     }
 
-    .custom-file-input:lang(en) ~ .custom-file-label::after {
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        content: "\f574";
-    }
-}
+    .is-invalid {
 
-.was-validated {
-    // .valid-feedback i,
-    // .invalid-feedback i {
-    //     position: absolute;
-    //     width: auto;
-    //     top: 45px;
-    //     right: 1rem;
-    //     margin-top: 0;
-    // }
-}
+        .form-control {
+            border-color: $red !important;
+        }
 
+        .form-control:focus {
+            box-shadow: 0 0 0 0.2rem rgba(220,53,69,.25), 0 0 6px $red;
+            -webkit-box-shadow: 0 0 0 0.2rem rgba(220,53,69,.25), 0 0 6px $red;
+        }
 
-// Form2
-label#checkbox-error {
-    margin-left: 1.2rem;
-}
+        .custom-file-label {
+            border-color: $red !important;
+        }
 
-legend {
-    font-size: initial;
-}
+        .form-control-feedback {
+            margin-right: 0.25rem;
+        }
 
-.has-error {
+        .fa-exclamation-triangle:before {
+            color: $red;
+        }
 
-    .form-control {
-        border-color: $red !important;
-    }
+        .form-control-feedback { // Default position of success icon inside input element.
+            // position: absolute;
+            // top: 2.75rem;
+            // right: 1.5rem;
+        }
 
-    .form-control:focus {
-        box-shadow: 0 0 0 0.2rem rgba(220,53,69,.25), 0 0 6px $red;
-        -webkit-box-shadow: 0 0 0 0.2rem rgba(220,53,69,.25), 0 0 6px $red;
+        .help-block {
+            color: $red;
+            font-style: italic;
+        }
     }
 
-    .form-control-feedback {
-        margin-right: 0.25rem;
-    }
+    .is-valid {
+        .form-control {
+            border-color: $green;
+        }
 
-    .fa-exclamation-triangle:before {
-        color: $red;
-    }
+        .form-control:focus {
+            box-shadow: 0 0 0 0.2rem rgba(40,167,69,.25), 0 0 6px $green;
+            -webkit-box-shadow: 0 0 0 0.2rem rgba(40,167,69,.25), 0 0 6px $green;
+        }
 
-    .help-block {
-        color: $red;
-        font-style: italic;
-    }
-}
+        .fa-check:before {
+            color: $green;
+        }
 
-.has-success {
-    .form-control {
-        border-color: $green;
-    }
-
-    .form-control:focus {
-        box-shadow: 0 0 0 0.2rem rgba(40,167,69,.25), 0 0 6px $green;
-        -webkit-box-shadow: 0 0 0 0.2rem rgba(40,167,69,.25), 0 0 6px $green;
-    }
-
-    .fa-check:before {
-        color: $green;
-    }
-
-    .form-control-feedback { // Default position of success icon inside input element.
-        position: absolute;
-        top: 2.75rem;
-        right: 1.5rem;
+        .form-control-feedback { // Default position of success icon inside input element.
+            position: absolute;
+            top: 2.75rem;
+            right: 1.5rem;
+        }
     }
 }

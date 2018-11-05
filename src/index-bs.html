@@ -3,7 +3,6 @@
 
 <head>
     <title>Form Validation Example</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
@@ -17,19 +16,23 @@
     <div class="container">
         <h1>Form Validation</h1>
         <p class="lead">This is a Bootstrap 4 form with examples of the form types used on metrotransit.org.</p>
-        <p>Client side validation is handled using <a href="https://jqueryvalidation.org/" target="_blank">jQuery.validate.js</a>.</p>
-        <form id="form2" method="post" action="" novalidate="nonvalidate">
+        <p>Client side validation is also handled by Bootstrap.</p>
+        <form id="form2" class="needs-validation" method="post" action="" novalidate="nonvalidate">
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
                         <label for="textField">Text field</label>
-                        <input type="text" id="textField" class="form-control" name="textField" placeholder="Can use any characters">
+                        <input type="text" id="textField" class="form-control" name="textField" placeholder="Can use any characters" required>
+                        <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                        <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                     </div>
                 </div>
                 <div class="col-md-4 offset-md-2">
                     <div class="form-group">
                         <label for="numberField">Number field (+/-)</label>
-                        <input type="number" id="numberField" class="form-control" name="numberField" placeholder="Numbers only">
+                        <input type="number" id="numberField" class="form-control" name="numberField" placeholder="Numbers only" required>
+                        <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                        <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                     </div>
                 </div>
             </div>
@@ -37,13 +40,17 @@
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
                         <label for="emailField">Email field</label>
-                        <input type="email" id="emailField" class="form-control" name="emailField" placeholder="Valid email address">
+                        <input type="email" id="emailField" class="form-control" name="emailField" placeholder="Valid email address" required>
+                        <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                        <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                     </div>
                 </div>
                 <div class="col-md-4 offset-md-2">
                     <div class="form-group">
                         <label for="passwordField">Password field</label>
-                        <input type="password" id="passwordField" class="form-control" name="passwordField">
+                        <input type="password" id="passwordField" class="form-control" name="passwordField" required>
+                        <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                        <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                     </div>
                 </div>
             </div>
@@ -51,13 +58,17 @@
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
                         <label for="dateField">Date field (uses the HTML5 datepicker by default)</label>
-                        <input type="date" id="dateField" class="form-control" name="dateField">
+                        <input type="date" id="dateField" class="form-control" name="dateField" required>
+                        <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                        <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                     </div>
                 </div>
                 <div class="col-md-4 offset-md-2">
                     <div class="form-group">
                         <label for="urlField">URL field</label>
-                        <input type="url" id="urlField" class="form-control" name="urlField" value="http://">
+                        <input type="url" id="urlField" class="form-control" name="urlField" value="http://" required>
+                        <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                        <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                     </div>
                 </div>
             </div>
@@ -65,24 +76,28 @@
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
                         <label for="selectField">Select field</label>
-                        <select id="selectField" class="form-control" name="selectField">
+                        <select id="selectField" class="form-control" name="selectField" required>
                             <option value="">Choose...</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                         </select>
+                       <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                       <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                     </div>
                 </div>
                 <div class="col-md-4 offset-md-2">
                     <div class="form-group">
                         <label for="selectMultipleField">Select multiple field</label>
-                        <select id="selectMultipleField" class="form-control" name="selectMultipleField" size="3" multiple>
+                        <select id="selectMultipleField" class="form-control" name="selectMultipleField" size="3" multiple required>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                             <option value="4">Four</option>
                             <option value="5">Five</option>
                         </select>
+                       <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                       <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                     </div>
                 </div>
             </div>
@@ -90,30 +105,34 @@
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
                         <label for="textareaField">Textarea</label>
-                        <textarea id="textareaField" class="form-control" name="textareaField" rows="3" placeholder="Type here..."></textarea>
+                        <textarea id="textareaField" class="form-control" name="textareaField" rows="3" placeholder="Type here..." required></textarea>
+                       <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                       <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                     </div>
                 </div>
                 <div class="col-md-4 offset-md-2">
                     <div class="form-group">
                         <label for="fileUploadField">File</label>
                         <div class="custom-file">
-                            <input type="file" id="fileUploadField" class="custom-file-input" name="fileUploadField">
+                            <input type="file" id="fileUploadField" class="custom-file-input" name="fileUploadField" required>
                             <label class="custom-file-label">Choose file</label>
+                            <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                            <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-2 mb-3">
-                    <fieldset>
-                        <legend>Checkbox (single)</legend>
-                        <div class="form-group">
-                            <div class="form-check">
-                                <input type="checkbox" id="checkboxSingle" class="form-check-input" name="checkboxSingle">
-                                <label class="form-check-label" for="checkbox">Checkbox</label>
-                            </div>
+                    <label class="checkboxSingle">Checkbox (single)</label>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input type="checkbox" id="checkboxSingle" class="form-check-input" name="checkboxSingle" required>
+                            <label class="form-check-label" for="checkbox">Checkbox</label>
+                            <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                            <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                         </div>
-                    </fieldset>
+                    </div>
                 </div>
                 <div class="col-md-2 mb-3">
                     <fieldset>
@@ -130,25 +149,29 @@
                             <div class="form-check">
                                 <input type="checkbox" id="checkboxGroup3" class="form-check-input" name="checkboxGroup">
                                 <label class="form-check-label" for="checkboxGroup3">Checkbox</label>
+                                <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                                <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                             </div>
                         </div>
                     </fieldset>
                 </div>
-                <div class="col-md-4 offset-md-2">
+                <div class="col-md-2 offset-md-2">
                     <fieldset>
                         <legend>Radio group</legend>
                         <div class="form-group">
                             <div class="form-check">
-                                <input type="radio" id="radioGroup1" class="form-check-input" name="radioGroup">
+                                <input type="radio" id="radioGroup1" class="form-check-input" name="radioGroup" required>
                                 <label class="form-check-label" for="radio1">Radio 1</label>
                             </div>
                             <div class="form-check">
-                                <input type="radio" id="radioGroup2" class="form-check-input" name="radioGroup">
+                                <input type="radio" id="radioGroup2" class="form-check-input" name="radioGroup" required>
                                 <label class="form-check-label" for="radio2">Radio 2</label>
                             </div>
                             <div class="form-check">
-                                <input type="radio" id="radioGroup3" class="form-check-input" name="radioGroup">
+                                <input type="radio" id="radioGroup3" class="form-check-input" name="radioGroup" required>
                                 <label class="form-check-label" for="radio3">Radio 3</label>
+                                <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                                <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                             </div>
                         </div>
                     </fieldset>
@@ -170,7 +193,7 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.validate.js"></script>
     <script type="text/javascript" src="js/additional-methods.js"></script>
-    <script type="text/javascript" src="js/scripts2.js"></script>
+    <script type="text/javascript" src="js/form-validation-bs.js"></script>
     <!-- endbuild -->
 
 </body>
