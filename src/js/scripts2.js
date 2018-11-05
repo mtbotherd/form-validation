@@ -63,36 +63,34 @@ $(document).ready(function() {
             //error.insertAfter(element);
 
             // Add `has-feedback` class to the parent div.input-container in order to add icons to inputs
-            //element.parents(".input-container").addClass("has-feedback");
+            element.parents(".form-group").addClass("has-feedback");
 
-            // Error message placement for checkbox. This is for the text only.
-            if (element.prop("type") === "checkbox" || element.prop("type") === "radio") {
-                error.appendTo(element.parents(".form-group"));
-            } else {
-                error.insertAfter(element);
-            }
+            // Insert error message and icon
+            // $("<i class='form-control-feedback fas fa-exclamation-triangle fa-sm'></i>").appendTo(element.parents(".has-error"));
+            // error.appendTo(element.parents(".has-error"));
 
-            // Add the div element, if doesn't exists, and apply the icon classes to it.
-            if (!element.next("div")[0]) {
-                $("<div class='form-control-feedback fas fa-exclamation-triangle fa-sm'></div>").insertAfter(element);
-            } else {
-                error.insertAfter(element);
-            }
+            if ( !$( element ).next( "i" )[ 0 ] ) {
+				$( "<i class='form-control-feedback fas fa-exclamation-triangle fa-sm'></i>" ).appendTo(element.parents(".has-error"));
+                error.appendTo(element.parents(".has-error"));
+			}
         },
-        success: function(label, element) {
-            //Add the div element, if doesn 't exists, and apply the icon classes to it.
-            if (!$(element).next("div")[0]) {
-                $("<div class='form-control-feedback fas fa-check fa-sm'></div>").insertAfter($(element));
-            }
-        },
-        highlight: function(element, errorClass, validClass) {
-            $(element).parents(".form-group").addClass("has-error").removeClass("has-success");
-            $(element).next("div").addClass("fa-exclamation-triangle").removeClass("fa-check");
-        },
-        unhighlight: function(element, errorClass, validClass) {
-            $(element).parents(".form-group").addClass("has-success").removeClass("has-error");
-            $(element).next("div").addClass("fa-check").removeClass("fa-exclamation-triangle");
-        }
+        // success: function(label, element) {
+        success: function ( label, element ) {
+            // if ( !$( element ).next( "i" )[ 0 ] ) {
+			// 	$( "<i class='form-control-feedback fas fa-exclamation-triangle fa-sm'></i>" ).appendTo(element.parents(".has-error"));
+			// }
+            // if ( !$( element ).next( "span" )[ 0 ] ) {
+			// 	$( "<span class='form-control-feedback fas fa-exclamation-triangle fa-sm'></span>" ).insertAfter( $( element ) );
+			// }
+		},
+		highlight: function ( element, errorClass, validClass ) {
+            $( element ).parents( ".form-group" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).next( "i" ).addClass( "fas fa-exclamation-triangle fa-sm" ).removeClass( "fa-check" );
+		},
+		unhighlight: function ( element, errorClass, validClass ) {
+            $( element ).parents( ".form-group" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).next( "i" ).addClass( "fas fa-check fa-sm" ).removeClass( "fa-check" );
+		}
     });
 
 });
