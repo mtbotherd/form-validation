@@ -31,7 +31,7 @@
                     <div class="form-group">
                         <label for="numberField">Number field (+/-)</label>
                         <input type="number" id="numberField" class="form-control" name="numberField" placeholder="Numbers only" required>
-                        <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                        <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter a number.</div>
                         <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     <div class="form-group">
                         <label for="emailField">Email field</label>
                         <input type="email" id="emailField" class="form-control" name="emailField" placeholder="Valid email address" required>
-                        <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                        <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter a valid email address.</div>
                         <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                     <div class="form-group">
                         <label for="passwordField">Password field</label>
                         <input type="password" id="passwordField" class="form-control" name="passwordField" required>
-                        <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                        <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter a password.</div>
                         <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                     <div class="form-group">
                         <label for="dateField">Date field (uses the HTML5 datepicker by default)</label>
                         <input type="date" id="dateField" class="form-control" name="dateField" required>
-                        <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                        <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter a date.</div>
                         <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                     <div class="form-group">
                         <label for="urlField">URL field</label>
                         <input type="url" id="urlField" class="form-control" name="urlField" value="http://" required>
-                        <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                        <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter a valid url.</div>
                         <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                         </select>
-                       <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                       <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please select one option.</div>
                        <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                             <option value="4">Four</option>
                             <option value="5">Five</option>
                         </select>
-                       <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                       <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please select at least one option.</div>
                        <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                         <div class="custom-file">
                             <input type="file" id="fileUploadField" class="custom-file-input" name="fileUploadField" required>
                             <label class="custom-file-label">Choose file</label>
-                            <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                            <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please select a file.</div>
                             <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
                         <div class="form-check">
                             <input type="checkbox" id="checkboxSingle" class="form-check-input" name="checkboxSingle" required>
                             <label class="form-check-label" for="checkbox">Checkbox</label>
-                            <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                            <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please check the box.</div>
                             <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                         </div>
                     </div>
@@ -139,17 +139,17 @@
                         <legend>Checkbox group</legend>
                         <div class="form-group">
                             <div class="form-check">
-                                <input type="checkbox" id="checkboxGroup1" class="form-check-input" name="checkboxGroup">
+                                <input type="checkbox" id="checkboxGroup1" class="form-check-input" name="checkboxGroup" required>
                                 <label class="form-check-label" for="checkboxGroup1">Checkbox</label>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" id="checkboxGroup2" class="form-check-input" name="checkboxGroup">
+                                <input type="checkbox" id="checkboxGroup2" class="form-check-input" name="checkboxGroup" required>
                                 <label class="form-check-label" for="checkboxGroup2">Checkbox</label>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" id="checkboxGroup3" class="form-check-input" name="checkboxGroup">
+                                <input type="checkbox" id="checkboxGroup3" class="form-check-input" name="checkboxGroup" required>
                                 <label class="form-check-label" for="checkboxGroup3">Checkbox</label>
-                                <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                                <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please check at least one box.</div>
                                 <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                             </div>
                         </div>
@@ -170,7 +170,7 @@
                             <div class="form-check">
                                 <input type="radio" id="radioGroup3" class="form-check-input" name="radioGroup" required>
                                 <label class="form-check-label" for="radio3">Radio 3</label>
-                                <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please enter some text.</div>
+                                <div class="invalid-feedback"><i class="fas fa-exclamation-triangle"></i> Please select one option.</div>
                                 <div class="valid-feedback"><i class="fas fa-check"></i> Looks good!</div>
                             </div>
                         </div>
@@ -187,7 +187,7 @@
         </form>
     </div>
 
-    <!-- build:js js/scripts.js -->
+    <!-- build:js js/scripts-bs.js -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
