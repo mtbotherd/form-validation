@@ -17,7 +17,7 @@
         <h1>Form Validation</h1>
         <p class="lead">This is a Bootstrap 4 form with examples of the form types used on metrotransit.org.</p>
         <p>Client side validation is handled using <a href="https://jqueryvalidation.org/" target="_blank">jQuery.validate.js</a>.</p>
-        <form id="form2" method="post" action="" novalidate="nonvalidate">
+        <form id="sampleForm" method="post" action="" novalidate="nonvalidate">
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
@@ -104,15 +104,13 @@
             </div>
             <div class="row">
                 <div class="col-md-2 mb-3">
-                    <fieldset>
-                        <legend>Checkbox (single)</legend>
-                        <div class="form-group">
-                            <div class="form-check">
-                                <input type="checkbox" id="checkboxSingle" class="form-check-input" name="checkboxSingle">
-                                <label class="form-check-label" for="checkbox">Checkbox</label>
-                            </div>
+                    <div class="form-group">
+                        <label for="checkboxGroup">Checkbox (single)</label>
+                        <div class="form-check">
+                            <input type="checkbox" id="checkboxSingle" class="form-check-input" name="checkboxSingle">
+                            <label class="form-check-label" for="checkbox">Checkbox</label>
                         </div>
-                    </fieldset>
+                    </div>
                 </div>
                 <div class="col-md-2 mb-3">
                     <fieldset>

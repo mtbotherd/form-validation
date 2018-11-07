@@ -25,7 +25,8 @@ form {
             margin-right: 0.25rem;
         }
 
-        .fa-exclamation-triangle:before {
+        .fa-exclamation-triangle:before,
+        .fa-times:before {
             color: $red;
         }
 

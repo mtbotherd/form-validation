@@ -6388,7 +6388,8 @@ form .is-invalid .custom-file-label {
 form .is-invalid .form-control-feedback {
   margin-right: 0.25rem; }
 
-form .is-invalid .fa-exclamation-triangle:before {
+form .is-invalid .fa-exclamation-triangle:before,
+form .is-invalid .fa-times:before {
   color: #ed1b2e; }
 
 form .is-invalid .help-block {

@@ -5,7 +5,7 @@ jQuery.validator.setDefaults({
     }
 })
 $(document).ready(function() {
-    $("#form2").validate({
+    $("#sampleForm").validate({
         rules: {
             textField: "required",
             numberField: "required",

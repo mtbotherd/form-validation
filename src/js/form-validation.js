@@ -1,12 +1,5 @@
-jQuery.validator.setDefaults({
-    debug: true,
-    submitHandler: function() {
-        alert("Success!  The form has been submitted.");
-    }
-});
-
 $(document).ready(function() {
-    $("#form2").validate({
+    $("#sampleForm").validate({
         rules: {
             textField: "required",
             numberField: "required",
@@ -70,37 +63,35 @@ $(document).ready(function() {
         // Replaces default .has-succes class with Bootstrap 4 .is-valid class
         validClass: "is-valid",
 
-        errorPlacement: function(error, element) {
-            //Add the `help-block` class to the error element
-            error.addClass("help-block");
-            //
-            // Add `has-feedback` class to the parent div.form-group
-            // in order to add icons to inputs
-            element.parents(".form-group").addClass("has-feedback");
+        errorPlacement: function ( error, element ) {
+			// Add the `help-block` class to the error element
+			error.addClass( "help-block" );
 
-            // Add error
-            if (element.prop("type") === "checkbox" || element.prop("type") === "radio") {
-                // If checkbox/radio append after parent div.
-                //This prevents error from displaying after first element of checkbox/radio group.
-                $("<span class='form-control-feedback fas fa-exclamation-triangle'></span>").appendTo(element.parents(".form-group"));
-                error.appendTo(element.parents(".form-group"));
-            } else {
-                $("<span class='form-control-feedback fas fa-exclamation-triangle'></span>").insertAfter(element);
-                error.insertAfter(element.next("span"));
-            }
-        },
-        success: function(element) {
-            // if ($(element).closest(".is-valid")) {
-            //     $(".form-control-feedback").removeClass(errorClass).addClass(validClass);
-            // }
-        },
-        highlight: function(element, errorClass, validClass) {
-            $(element).closest(".form-group").addClass(errorClass).removeClass(validClass);
+			// Add `has-feedback` class to the parent div.form-group
+			// in order to add icons to inputs
+			element.parents( ".form-group" ).addClass( "has-feedback" );
 
-        },
-        unhighlight: function(element, errorClass, validClass) {
-            $(element).closest(".form-group").removeClass(errorClass).addClass(validClass);
-            $(element).next("span").addClass("fa-check").removeClass("fa-exclamation-triangle");
-        }
+			if ( element.prop( "type" ) === "checkbox" || element.prop( "type" ) === "radio" ) {
+                $( "<span class='fas fa-exclamation-triangle form-control-feedback'></span>" ).appendTo( element.parents( ".form-group" ) );
+				error.appendTo( element.parents( ".form-group" ) );
+			} else {
+                $( "<span class='fas fa-exclamation-triangle form-control-feedback'></span>" ).insertAfter( element );
+				error.appendTo( element.parents( ".form-group" ) );
+			}
+		},
+		success: function ( label, element ) {
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !$( element ).next( "span" )[ 0 ] ) {
+				$( "<span class='fas fa-check form-control-feedback'></span>" ).insertAfter( $( element ) );
+			}
+		},
+		highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".form-group" ).addClass( errorClass ).removeClass( validClass );
+			$( element ).next( "span" ).addClass( "fa-exclamation-triangle" ).removeClass( "fa-check" );
+		},
+		unhighlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".form-group" ).addClass( validClass ).removeClass( errorClass );
+			$( element ).next( "span" ).addClass( "fa-check" ).removeClass( "fa-exclamation-triangle" );
+		}
     });
 });
