@@ -6375,12 +6375,23 @@ a.text-dark:hover, a.text-dark:focus {
 form legend {
   font-size: initial; }
 
+form .custom-file-input:lang(en) ~ .custom-file-label::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f574";
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 900; }
+
 form .is-invalid .form-control {
   border-color: #ed1b2e !important; }
 
-form .is-invalid .form-control:focus {
+form .is-invalid .form-control:focus,
+form .is-invalid .custom-file-input:focus ~ .custom-file-label {
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25), 0 0 6px #ed1b2e;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25), 0 0 6px #ed1b2e; }
+
+form .is-invalid .custom-file-input:lang(en) ~ .custom-file-label::after {
+  border-left: 1px solid #ed1b2e; }
 
 form .is-invalid .custom-file-label {
   border-color: #ed1b2e !important; }
@@ -6399,14 +6410,19 @@ form .is-invalid .help-block {
 form .is-valid .form-control {
   border-color: #28a745; }
 
-form .is-valid .form-control:focus {
+form .is-valid .form-control:focus,
+form .is-valid .custom-file-input:focus {
   box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25), 0 0 6px #28a745;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25), 0 0 6px #28a745; }
+
+form .is-valid .custom-file-label {
+  border-color: #28a745 !important; }
 
 form .is-valid .fa-check:before {
   color: #28a745; }
 
 form .is-valid .form-control-feedback {
+  display: none;
   position: absolute;
   top: 2.75rem;
   right: 1.5rem; }
