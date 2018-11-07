@@ -56,7 +56,7 @@ $(document).ready(function() {
             checkboxGroup: "Please check at least one box.",
             radioGroup: "Please select one."
         },
-        onfocusout: function(element) {
+        onfocusin: function(element) {
         this.element(element); // triggers validation
         },
         onkeyup: function(element, event) {
