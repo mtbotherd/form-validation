@@ -1,8 +1,8 @@
-$.validator.setDefaults( {
-	submitHandler: function () {
-		alert( "submitted!" );
-	}
-} );
+$.validator.setDefaults({
+    submitHandler: function() {
+        alert("submitted!");
+    }
+});
 $(document).ready(function() {
     $("#sampleForm").validate({
         rules: {
@@ -61,12 +61,12 @@ $(document).ready(function() {
             checkboxGroup: "Please check at least one box.",
             radioGroup: "Please select one."
         },
-        onfocusin: function(element) {
-        this.element(element); // triggers validation
-        },
-        onkeyup: function(element, event) {
+        onfocusout: function(element) {
             this.element(element); // triggers validation
         },
+        // onkeyup: function(element, event) {
+        //     this.element(element); // triggers validation
+        // },
         errorElement: "em",
 
         // Replaces default .has-error class with Bootstrap 4 .is-valid class
@@ -74,41 +74,41 @@ $(document).ready(function() {
         // Replaces default .has-succes class with Bootstrap 4 .is-valid class
         validClass: "is-valid",
 
-        errorPlacement: function ( error, element ) {
-			// Add the `help-block` class to the error element
-			error.addClass( "help-block" );
+        errorPlacement: function(error, element) {
+            // Add the `help-block` class to the error element
+            error.addClass("help-block");
 
-			element.parents( ".form-group" ).addClass( "has-feedback" );
+            element.parents(".form-group").addClass("has-feedback");
 
-			if (element.prop( "type" ) === "checkbox" ||
-                element.prop( "type" ) === "radio" ||
-                element.prop( "type" ) === "file" ) {
-                    $( "<span class='fas fa-exclamation-triangle form-control-feedback'></span>" ).appendTo( element.parents( ".form-group" ) );
-                    error.appendTo( element.parents( ".form-group" ) );
-			} else {
-                $( "<span class='fas fa-exclamation-triangle form-control-feedback'></span>" ).insertAfter( element );
-				error.appendTo( element.parents( ".form-group" ) );
-			}
-		},
-		success: function ( label, element ) {
-			// Add the span element, if doesn't exists, and apply the icon classes to it.
-			// if ( !$( element ).next( "span" )[ 0 ] ) {
-			// 	$( "<span class='fas fa-check form-control-feedback'></span>" ).insertAfter( $( laebl ) );
-			// }
-		},
-		highlight: function ( element, errorClass, validClass ) {
+            if (element.prop("type") === "checkbox" ||
+                element.prop("type") === "radio" ||
+                element.prop("type") === "file") {
+                $("<span class='fas fa-exclamation-triangle form-control-feedback'></span>").appendTo(element.parents(".form-group"));
+                error.appendTo(element.parents(".form-group"));
+            } else {
+                $("<span class='fas fa-exclamation-triangle form-control-feedback'></span>").insertAfter(element);
+                error.appendTo(element.parents(".form-group"));
+            }
+        },
+        success: function(label, element) {
+            // Add the span element, if doesn't exists, and apply the icon classes to it.
+            // if ( !$( element ).next( "span" )[ 0 ] ) {
+            // 	$( "<span class='fas fa-check form-control-feedback'></span>" ).insertAfter( $( laebl ) );
+            // }
+        },
+        highlight: function(element, errorClass, validClass) {
             // Adds error ".is-invalid" for Bootstrap 4 styles.
-			$( element ).parents( ".form-group" ).addClass( errorClass ).removeClass( validClass );
+            $(element).parents(".form-group").addClass(errorClass).removeClass(validClass);
 
             // Sets error icon, removes success icon.
-            $( element ).next( "span" ).addClass( "fa-exclamation-triangle" ).removeClass( "fa-check" );
-		},
-		unhighlight: function ( element, errorClass, validClass ) {
+            $(element).next("span").addClass("fa-exclamation-triangle").removeClass("fa-check");
+        },
+        unhighlight: function(element, errorClass, validClass) {
             // Adds valid class ".is-valid" for Bootstrap 4 styles.
-			$( element ).parents( ".form-group" ).addClass( validClass ).removeClass( errorClass );
+            $(element).parents(".form-group").addClass(validClass).removeClass(errorClass);
 
             // Sets success icon, removed error icon.
-			$( element ).next( "span" ).addClass( "fa-check" ).removeClass( "fa-exclamation-triangle" );
-		}
+            $(element).next("span").addClass("fa-check").removeClass("fa-exclamation-triangle");
+        }
     });
 });
