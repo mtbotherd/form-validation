@@ -6435,4 +6435,10 @@ h1 {
   margin-top: 3rem;
   padding-bottom: .25rem; }
 
+.custom-file {
+  overflow: hidden; }
+
+.custom-file-label {
+  white-space: nowrap; }
+
 /*# sourceMappingURL=../maps/styles.css.map */
