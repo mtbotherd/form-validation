@@ -34,5 +34,11 @@
         "popper.js": "^1.14.3",
         "run-sequence": "^2.2.1"
     },
+<<<<<<< HEAD
     "dependencies": {}
+=======
+    "dependencies": {
+        "event-stream": "^3.3.4"
+    }
+>>>>>>> 1554ad258bf40856ef70cd9abd51857716f5aa9d
 }
